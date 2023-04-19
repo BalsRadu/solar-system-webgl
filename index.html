@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Solar System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div id="container" >
+    <!-- Loading prompt-->
+    <div id="prompt">
+        <div class="intro-screen">
+            <div class="intro-text">
+                <div class="intro-heading">
+                    <h1>Our Solar System</h1>
+                </div>
+                <div class="inner">
+                    <p>This is a model of the solar system made with <a href="http://threejs.org/" target="_blank">Three.js</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a>. This project was made out of a passion for astronomy and space exploration.</p>
+                    <p>This project features a simple yet beautiful atmospheric model, photo-realistic rendering for a few solar system bodies, first-person roaming, collision checking and many more!</p>
+                    <p>It was inspired by the "Pale Blue Dot", a photograph of planet Earth taken in 1990 by the Voyager 1 spacecraft from a distance of approximately 6 billion kilometers away.</p>
+                    <img src="https://cdn.theatlantic.com/thumbor/GzBNwvQda_ykerGcvbdTSxDQNJU=/570x773/media/img/posts/2014/02/Pale_Blue_Dot_615_labeled/original.jpg" alt="Girl in a jacket" width="500" height="600">
+                    <p>"If you look at it, you see a dot. That‘s here. That’s home. That‘s us. On it, everyone you ever heard of,  every human being who ever lived, lived out their lives. The aggregate of all our joys and sufferings, … every saint and sinner in the history of our species, lived there on a mote of dust, suspended in a sunbeam." - Carl Segan</p>
+                    <a id="control" href="#" class="progress">Let's Start!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <audio id="promptSound" src="res/prompt/ding.wav" />
+</div>
+<div id="info">
+    <div class="help-section">
+        <i data-open="info-section" class="fi-info"></i>
+    </div>  
+    <div id="info-section" class="reveal info-modal" data-reveal data-close-on-click="true">
+        <div class="project-info row collapse">
+            <h3>Controls</h3>
+            <span class="small-12 columns">Use your mouse or trackpad to navigate the scene. To zoom, use a scroll motion. When viewing a planet, you can move around a planet using a click + drag motion. To move around you need the select "Roam" option from the Control screen. You can move your camera's position in space using the keyboard arrows.</span>
+        </div>
+
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <a id="info-got-it" class="button large" data-close="info-section">Close</a>
+    </div>
+</div>
+    <!-- Libraries -->
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/foundation.min.js"></script>
+    <script type="text/javascript" src="js/libs/three.min.js"></script> 
+    <script src="js/libs/stats.min.js"></script>
+    <script src="js/libs/tween.min.js"></script>
+    <script src="js/renderers/Projector.js"></script>
+    <script src="js/renderers/CanvasRenderer.js"></script>
+    <script src="js/libs/OBJLoader.js"></script>
+    <script src="js/libs/MTLLoader.js"></script>
+    <script src="js/libs/GPUParticleSystem.js"></script>
+    <script src="js/libs/FirstPersonControls.js"></script>
+    <script src="js/index.js"></script>
+    <!-- Loaders -->
+    <script>var textureLoader = new THREE.TextureLoader();</script>
+    <script>var objLoader = new THREE.OBJLoader();</script>
+    <script>var mtlLoader = new THREE.MTLLoader();</script>
+    <!-- Shaders -->
+    <script src="js/shaders.js"></script>
+    <!-- Global timing -->
+    <script src="js/time.js"></script>
+    <!-- Camera parameters -->
+    <!-- Note: THREE.js camera is not in this script. -->
+    <!-- This file contains an object for calculating camera position. -->
+    <script src="js/cameraParameters.js"></script>
+    <!-- Celestial body abstract -->
+    <script src="js/CelestialBody.js"></script>
+    <!-- Orbit function -->
+    <script src="js/orbit.js"></script>
+    <!-- Data -->
+    <script src="js/data.js"></script>
+    <!-- Data -->
+    <!-- Planet loader -->
+    <!-- Animation -->
+    <script src="js/animation.js"></script>
+    <!-- Controls -->
+    <script src="js/control.js"></script>
+    <script src="js/libs/dat.gui.min.js"></script> 
+    <!-- Initializers -->
+    <script src="js/main.js"></script>
+</body>
+</html>
